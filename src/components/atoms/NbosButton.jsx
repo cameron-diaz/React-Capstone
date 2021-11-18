@@ -32,6 +32,7 @@ NbosButton.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  wrap: PropTypes.bool,
 };
 
 NbosButton.defaultProps = {
@@ -39,4 +40,5 @@ NbosButton.defaultProps = {
   primary: false,
   size: 'medium',
   onClick: undefined,
+  wrap: false,
 };

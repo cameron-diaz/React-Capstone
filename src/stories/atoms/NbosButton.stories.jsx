@@ -37,4 +37,13 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
+  wrap: false,
+};
+
+export const LongTextButton = Template.bind({});
+LongTextButton.args = {
+  size: 'small',
+  label: 'This is a really long button label',
+  wrap: true,
+  backgroundColor: 'red',
 };
