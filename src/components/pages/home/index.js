@@ -2,18 +2,15 @@ import React from 'react';
 import { NbosHighcharts } from '../../molecules/NbosHighcharts';
 import './style.css';
 import { Link } from 'react-router-dom';
-import NbosSummaryDashBoardTemp from '../../templates/NbosSummaryDashBoardTemp';
-
-// import NbosSummaryInfo1 from '../../molecules/NbosSummaryInfo1';
-// import NbosSummaryInfo2 from '../../molecules/NbosSummaryInfo2';
-// import NbosClientInfo from '../../molecules/NbosClientInfo.jsx';
-// import NbosSurfaceCard from '../../atoms/NbosSurfaceCard';
+// import NbosSummaryDashBoardTemp from '../../templates/NbosSummaryDashBoardTemp';
+import NbosMetricToggle from '../../atoms/NbosMetricToggle';
 
 export function HomePage() {
   return (
     <div className="App">
       <header className="App-header">
-        <NbosSummaryDashBoardTemp />
+        {/* <NbosSummaryDashBoardTemp /> */}
+        <NbosMetricToggle />
       </header>
       <section>
         <div>
