@@ -7,7 +7,7 @@ import { UserOutlined } from '@ant-design/icons';
 export default function NbosUserInfo() {
   return (
     <NbosSurfaceCard>
-      <div className="tw-grid tw-grid-rows-4 tw-gap-5 tw-mx-10 tw-mt-10">
+      <div className="tw-grid tw-grid-rows-4 tw-gap-5 tw-mx-10 tw-my-6">
         <div>
           <Avatar
             size={85}
