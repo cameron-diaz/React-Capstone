@@ -7,8 +7,8 @@ import { UserOutlined } from '@ant-design/icons';
 export default function NbosUserInfo() {
   return (
     <NbosSurfaceCard>
-      <div className="tw-grid tw-grid-rows-4">
-        <div className="tw-pt-2">
+      <div className="tw-grid tw-grid-rows-4 tw-items-center">
+        <div className="tw-py-2">
           <Avatar
             size={85}
             style={{ backgroundColor: '#87d068' }}
@@ -25,7 +25,7 @@ export default function NbosUserInfo() {
           subTextLabel="Role"
         />
         <NbosSubTextTopLabel
-          bottomLabel="Patrick Barnes"
+          bottomLabel="John Smith"
           subTextLabel="Team Lead"
         />
       </div>
