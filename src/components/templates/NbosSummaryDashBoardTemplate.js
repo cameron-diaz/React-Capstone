@@ -20,12 +20,12 @@ export default function NbosSummaryDashBoardTemp() {
     //     <NbosSummaryInfo2 />
     //   </div>
     // </div>
-
-    <div className="tw-grid tw-grid-cols-3 tw-items-center tw-p-2 tw-gap-2 tw-space-x-1">
-      <div className="tw-px-10">
+    <div className="tw-grid tw-grid-cols-3 tw-items-center tw-space-x-1 tw-mb-12">
+      <div className="tw-px-8">
         <NbosUserInfo />
       </div>
-      <div className="tw-grid tw-grid-rows-3 tw-ml-8 tw-gap-7 tw-col-span-2 tw-self-stretch">
+      <div className="tw-grid tw-grid-rows-3 tw-ml-8 tw-gap-y-6 tw-col-span-2 tw-self-stretch">
+        {/* // No  self stretch? */}
         <div className="tw-row-span-2">
           <NbosClientInfo />
         </div>

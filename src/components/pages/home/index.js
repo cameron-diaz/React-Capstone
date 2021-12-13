@@ -6,23 +6,27 @@ import NbosSummaryDashBoardTemplate from '../../templates/NbosSummaryDashBoardTe
 // import { Switch } from 'antd';
 import TopNavBar from '../../atoms/TopNavBar';
 import SideNavBar from '../../atoms/SideNavBar';
-// import NbosMetricToggle from '../../atoms/NbosMetricToggle';
+import NbosMetricsCard from '../../molecules/NbosMetricsCard';
 
 export function HomePage() {
   return (
-    <div className="App">
+    <div className="App tw-bg-gray-100">
       <SideNavBar />
       <TopNavBar />
-      {/* <header className="App-header"><NbosMetricToggle /></header> */}
+      {/* <header className="App-header"></header> */}
       <section>
-        <div className="tw-mt-16 tw-ml-3">
+        <div className="tw-mx-8 tw-pt-16">
           <NbosSummaryDashBoardTemplate />
-          {/* <Link to="/edit" className="App-link">
-            Edit Page
-          </Link> */}
+          {/* Should I make a Template for the metric card to go on? */}
+          <NbosMetricsCard />
         </div>
-        {/* <NbosHighcharts /> */}
       </section>
     </div>
   );
+}
+
+{
+  /* <Link to="/edit" className="App-link">
+            Edit Page
+          </Link> */
 }
