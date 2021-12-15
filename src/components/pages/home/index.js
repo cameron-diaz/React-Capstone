@@ -13,7 +13,7 @@ import NbosMetricsTemplate from '../../templates/NbosMetricsTemplate';
 
 export function HomePage() {
   return (
-    <div className="App tw-bg-gray-100">
+    <div className="App tw-bg-gray-100 tw-h-screen">
       <SideNavBar />
       <TopNavBar />
       <section className="tw-h-full tw-mx-8 tw-pt-16">
@@ -22,7 +22,7 @@ export function HomePage() {
         {/* Should I make a Template for the metric card to go on? */}
         {/* <NbosMetricsCard /> */}
         {/* </div> */}
-        <div className="tw-flex tw-justify-around tw-mb-7">
+        <div className="tw-flex tw-justify-between tw-mb-7 tw-mx-6">
           <NbosUserInfoTemplate />
           <NbosClientInfoTemplate />
         </div>

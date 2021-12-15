@@ -3,7 +3,7 @@ import NbosMetricsCard from '../molecules/NbosMetricsCard';
 
 export default function NbosMetricsTemplate() {
   return (
-    <div>
+    <div className="tw-mx-6">
       <NbosMetricsCard />
     </div>
   );

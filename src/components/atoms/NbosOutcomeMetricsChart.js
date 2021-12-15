@@ -3,7 +3,7 @@ import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 
 export default function NbosOutcomeMetricsChart() {
-  const chartTitle = 'Outcome Metrics Chart';
+  const chartTitle = '';
   const options = {
     chart: {
       type: 'bar',
