@@ -2,18 +2,28 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './style.css';
 import { fetchUserInfo } from '../../../store/userSlice';
+import { fetchClientInfo } from '../../../store/clientRelationSlice';
 import TopNavBar from '../../atoms/TopNavBar';
 import SideNavBar from '../../atoms/SideNavBar';
 import NbosUserInfoTemplate from '../../templates/NbosUserInfoTemplate.js';
 import NbosClientInfoTemplate from '../../templates/NbosClientInfoTemplate.js';
 import NbosMetricsTemplate from '../../templates/NbosMetricsTemplate';
+import NbosPipelineSurfaceCard from '../../atoms/NbosPipelineSurfaceCard';
+import { fetchSummary1 } from '../../../store/summary1Slice';
+import { fetchSummary2 } from '../../../store/summary2Slice';
 
 export function HomePage() {
   const userInfo = useSelector(state => state.userInfo);
+  const clientInfo = useSelector(state => state.clientInfo);
+  const summary1 = useSelector(state => state.summary1);
+  const summary2 = useSelector(state => state.summary2);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchUserInfo());
+  useEffect(async () => {
+    await dispatch(fetchUserInfo());
+    await dispatch(fetchClientInfo());
+    await dispatch(fetchSummary1());
+    await dispatch(fetchSummary2());
   });
 
   return (
@@ -21,23 +31,17 @@ export function HomePage() {
       <SideNavBar />
       <TopNavBar />
       <section className="tw-h-full tw-mx-8 tw-pt-16">
-        {/* <div className="tw-mx-8 tw-pt-16"> */}
-        {/* <NbosSummaryDashBoardTemplate /> */}
-        {/* Should I make a Template for the metric card to go on? */}
-        {/* <NbosMetricsCard /> */}
-        {/* </div> */}
         <div className="tw-flex tw-justify-between tw-mb-7 tw-mx-6">
           <NbosUserInfoTemplate userInfo={userInfo} />
-          <NbosClientInfoTemplate />
+          <NbosClientInfoTemplate
+            clientInfo={clientInfo}
+            summary1={summary1}
+            summary2={summary2}
+          />
         </div>
-        <NbosMetricsTemplate />
+        <NbosMetricsTemplate userInfo={userInfo} />
+        <NbosPipelineSurfaceCard />
       </section>
     </div>
   );
-}
-
-{
-  /* <Link to="/edit" className="App-link">
-            Edit Page
-          </Link> */
 }

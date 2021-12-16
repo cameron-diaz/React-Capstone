@@ -3,34 +3,40 @@ import NbosSubTextBottomLabel from '../atoms/NbosSubTextBottomLabel';
 import NbosSurfaceCard from '../atoms/NbosSurfaceCard';
 import NbosRelationshipLabel from '../atoms/NbosRelationshipLabel';
 
-export default function NbosClientInfo() {
+export default function NbosClientInfo({ clientInfo }) {
   return (
     <NbosSurfaceCard>
       <div className="tw-grid tw-grid-cols-3">
         <div className="tw-mr-auto tw-flex tw-justify-center tw-pl-4 tw-pt-6">
           <NbosRelationshipLabel
-            topLabel="56"
+            topLabel={clientInfo.totalRelationships}
             subTextLabel="Total Relationships"
           />
         </div>
         <div className="tw-border-l-2">
           <NbosSubTextBottomLabel
-            topLabel="4"
+            topLabel={clientInfo.creditOnly}
             subTextLabel="Credit Only Relationship"
           />
           <NbosSubTextBottomLabel
-            topLabel="6"
+            topLabel={clientInfo.highRelationships}
             subTextLabel="Relationships with <$25K TTM Revenue"
           />
         </div>
         <div className="tw-border-l-2">
-          <NbosSubTextBottomLabel topLabel="14" subTextLabel="Top Prospects" />
-          <NbosSubTextBottomLabel topLabel="0" subTextLabel="Suspects" />
+          <NbosSubTextBottomLabel
+            topLabel={clientInfo.topProspects}
+            subTextLabel="Top Prospects"
+          />
+          <NbosSubTextBottomLabel
+            topLabel={clientInfo.suspects}
+            subTextLabel="Suspects"
+          />
         </div>
       </div>
     </NbosSurfaceCard>
   );
 }
 
-// git push https://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@github.com/cdiazit5/React-Capstone.git
+// git push https://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@github.com/cdiazit5/React-Capstone.git
 //

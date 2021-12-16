@@ -2,23 +2,23 @@ import React from 'react';
 import NbosSubTextBottomLabel from '../atoms/NbosSubTextBottomLabel';
 import NbosSurfaceCard from '../atoms/NbosSurfaceCard';
 
-export default function NbosSummaryInfo1() {
+export default function NbosSummaryInfo1({ summary1 }) {
   return (
     <NbosSurfaceCard>
       <div className="tw-grid tw-grid-cols-3 tw-h-full tw-content-evenly tw-items-stretch">
         <NbosSubTextBottomLabel
-          topLabel="$519.09k"
+          topLabel={summary1.avgLoanBal}
           subTextLabel="TTM Avg Loan Balance"
         />
         <div className="tw-border-l-2">
           <NbosSubTextBottomLabel
-            topLabel="$549.13k"
+            topLabel={summary1.avgCreditComm}
             subTextLabel="TTM Avg Credit Commitments"
           />
         </div>
         <div className="tw-border-l-2">
           <NbosSubTextBottomLabel
-            topLabel="$0.00"
+            topLabel={summary1.depBal}
             subTextLabel="TTM Deposit Balance"
           />
         </div>

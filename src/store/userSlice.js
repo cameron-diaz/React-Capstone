@@ -1,28 +1,30 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import services from './services';
 
+export const fetchUserInfo = createAsyncThunk('user/setUserInfo', async () => {
+  console.log('fetch user info');
+  const response = await services.getUsers();
+  console.log(response.data);
+  return response.data[0];
+});
+
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
-    userName: 'Patrick Barnes',
+    userName: 'A persons name',
     hireDate: '',
     role: '',
     teamLead: '',
   },
-  reducer: {
-    setUserinfo: (state, action) => {
-      state.userName = `${action.payload.first_name} ${action.payload.last_name}`;
+  reducers: {},
+  extraReducers: {
+    [fetchUserInfo.fulfilled]: (state, { payload }) => {
+      state.userName = `${payload.first_name} ${payload.last_name}`;
       state.hireDate = '1/1/2021';
-      state.role = action.payload.role;
-      state.teamLead = `${action.payload.tl_first_name} ${action.payload.tl_last_name} `;
+      state.role = payload.role;
+      state.teamLead = `${payload.tl_first_name} ${payload.tl_last_name} `;
     },
   },
-});
-
-export const fetchUserInfo = createAsyncThunk('user/setUserInfo', async () => {
-  console.log('fetch user info');
-  const response = await services.getUsers();
-  return response.data;
 });
 
 export const { setUserInfo } = userSlice.actions;

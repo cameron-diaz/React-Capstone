@@ -4,7 +4,7 @@ import React from 'react';
 import NbosSurfaceCard from '../atoms/NbosSurfaceCard';
 import NbosSubTextTopLabel from '../atoms/NbosSubTextTopLabel';
 
-export default function NbosUserInfoTemplate() {
+export default function NbosUserInfoTemplate({ userInfo }) {
   return (
     <NbosSurfaceCard>
       <div className="tw-grid tw-grid-rows-4 tw-items-center tw-w-[17rem] tw-mx-3">
@@ -15,17 +15,17 @@ export default function NbosUserInfoTemplate() {
             icon={<UserOutlined />}
           />
         </div>
-        <NbosSubTextTopLabel bottomLabel="Patrick Barnes" subTextLabel="Name" />
         <NbosSubTextTopLabel
-          bottomLabel="10/10/2017"
+          bottomLabel={userInfo.userName}
+          subTextLabel="Name"
+        />
+        <NbosSubTextTopLabel
+          bottomLabel={userInfo.hireDate}
           subTextLabel="Hire Date"
         />
+        <NbosSubTextTopLabel bottomLabel={userInfo.role} subTextLabel="Role" />
         <NbosSubTextTopLabel
-          bottomLabel="Commercial RM II"
-          subTextLabel="Role"
-        />
-        <NbosSubTextTopLabel
-          bottomLabel="John Smith"
+          bottomLabel={userInfo.teamLead}
           subTextLabel="Team Lead"
         />
       </div>
