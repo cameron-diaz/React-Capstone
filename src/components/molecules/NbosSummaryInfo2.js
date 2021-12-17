@@ -5,12 +5,12 @@ import NbosSurfaceCard from '../atoms/NbosSurfaceCard';
 export default function NbosSummaryInfo2({ summary2 }) {
   return (
     <NbosSurfaceCard>
-      <div className="tw-grid tw-grid-cols-3 tw-content-end">
+      <div className="tw-grid tw-grid-cols-3 tw-items-stretch tw-min-h-[100px]">
         <NbosSubTextBottomLabel
           topLabel={summary2.rev}
           subTextLabel="TTM Revenue"
         />
-        <div className="tw-border-l-2">
+        <div className="tw-border-l-2 tw">
           <NbosSubTextBottomLabel
             topLabel={summary2.avgRaroc}
             subTextLabel="TTM AVG. RAROC"

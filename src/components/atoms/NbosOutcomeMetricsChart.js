@@ -2,7 +2,7 @@ import React from 'react';
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 
-export default function NbosOutcomeMetricsChart() {
+export default function NbosOutcomeMetricsChart({ outcomeMetrics }) {
   const chartTitle = '';
   const options = {
     chart: {
@@ -12,18 +12,29 @@ export default function NbosOutcomeMetricsChart() {
       text: chartTitle,
     },
     xAxis: {
-      categories: ['Loan Production', 'Deposit Growth'],
+      categories: [
+        'Loan Production',
+        'Deposit Growth',
+        'TM Growth',
+        'New Clients',
+      ],
     },
     series: [
       {
-        data: [3.1],
-        name: 'Test Data',
+        name: 'RM',
+        data: [`${outcomeMetrics.loanProdY1}`, 156, 947, 408, 6],
       },
       {
-        data: [5],
-        name: 'Test Data',
+        name: 'This Time Last Year',
+        data: [`${outcomeMetrics.loanProdY2}`, 841, 3714, 727, 0],
       },
     ],
   };
-  return <HighchartsReact highcharts={Highcharts} options={options} />;
+  return (
+    <HighchartsReact
+      highcharts={Highcharts}
+      options={options}
+      outcomeMetrics={outcomeMetrics}
+    />
+  );
 }

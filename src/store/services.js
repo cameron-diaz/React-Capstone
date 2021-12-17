@@ -16,6 +16,9 @@ const services = {
   getSummary2: () => {
     return axios.get(`${apiBaseURL}/summary2`);
   },
+  getOutcomeMetrics: () => {
+    return axios.get(`${apiBaseURL}/outcome_metrics`);
+  },
 };
 
 export default services;
