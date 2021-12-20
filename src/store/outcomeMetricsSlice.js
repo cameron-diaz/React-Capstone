@@ -29,8 +29,8 @@ export const outcomeMetricsSlice = createSlice({
       state.loanProdY2 = `${payload.loan_prod_y2}`;
       state.DepGrowthY1 = `${payload.dep_growth_y1}`;
       state.DepGrowthY2 = `${payload.dep_growth_y2}`;
-      state.TmGrowthY1 = `${payload.tm_growth_y1}`;
-      state.TmGrowthY2 = `${payload.tm_growth_y2}`;
+      state.tmGrowthY1 = `${payload.tm_growth_y1}`;
+      state.tmGrowthY2 = `${payload.tm_growth_y2}`;
       state.newClientsY1 = `${payload.new_clients_y1}`;
       state.newClientsY2 = `${payload.new_clients_y2}`;
     },

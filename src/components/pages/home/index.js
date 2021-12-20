@@ -12,6 +12,7 @@ import NbosPipelineSurfaceCard from '../../atoms/NbosPipelineSurfaceCard';
 import { fetchSummary1 } from '../../../store/summary1Slice';
 import { fetchSummary2 } from '../../../store/summary2Slice';
 import { fetchOutcomeMetrics } from '../../../store/outcomeMetricsSlice';
+import { fetchBehaviorMetrics } from '../../../store/behaviorMetricsSlice';
 
 export function HomePage() {
   const userInfo = useSelector(state => state.userInfo);
@@ -19,6 +20,7 @@ export function HomePage() {
   const summary1 = useSelector(state => state.summary1);
   const summary2 = useSelector(state => state.summary2);
   const outcomeMetrics = useSelector(state => state.outcomeMetrics);
+  const behaviorMetrics = useSelector(state => state.behaviorMetrics);
   const dispatch = useDispatch();
 
   useEffect(async () => {
@@ -27,6 +29,7 @@ export function HomePage() {
     await dispatch(fetchSummary1());
     await dispatch(fetchSummary2());
     await dispatch(fetchOutcomeMetrics());
+    await dispatch(fetchBehaviorMetrics());
   });
 
   return (
@@ -45,6 +48,7 @@ export function HomePage() {
         <NbosMetricsTemplate
           userInfo={userInfo}
           outcomeMetrics={outcomeMetrics}
+          behaviorMetrics={behaviorMetrics}
         />
         <NbosPipelineSurfaceCard />
       </section>

@@ -25,7 +25,7 @@ export default function NbosOutcomeMetricsChart({ outcomeMetrics }) {
         data: [
           parseFloat(outcomeMetrics.loanProdY1),
           parseFloat(outcomeMetrics.DepGrowthY1),
-          parseFloat(outcomeMetrics.TmGrowthY1),
+          parseFloat(outcomeMetrics.tmGrowthY1),
           parseFloat(outcomeMetrics.newClientsY1),
         ],
       },
@@ -34,7 +34,7 @@ export default function NbosOutcomeMetricsChart({ outcomeMetrics }) {
         data: [
           parseFloat(outcomeMetrics.loanProdY2),
           parseFloat(outcomeMetrics.DepGrowthY2),
-          parseFloat(outcomeMetrics.TmGrowthY2),
+          parseFloat(outcomeMetrics.tmGrowthY2),
           parseFloat(outcomeMetrics.newClientsY2),
         ],
       },
