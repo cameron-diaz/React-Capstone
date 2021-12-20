@@ -8,11 +8,12 @@ import SideNavBar from '../../atoms/SideNavBar';
 import NbosUserInfoTemplate from '../../templates/NbosUserInfoTemplate.js';
 import NbosClientInfoTemplate from '../../templates/NbosClientInfoTemplate.js';
 import NbosMetricsTemplate from '../../templates/NbosMetricsTemplate';
-import NbosPipelineSurfaceCard from '../../atoms/NbosPipelineSurfaceCard';
 import { fetchSummary1 } from '../../../store/summary1Slice';
 import { fetchSummary2 } from '../../../store/summary2Slice';
 import { fetchOutcomeMetrics } from '../../../store/outcomeMetricsSlice';
 import { fetchBehaviorMetrics } from '../../../store/behaviorMetricsSlice';
+import NbosPipelineTemplate from '../../templates/NbosPipelineTemplate';
+import { fetchOpportunitySummary } from '../../../store/opportunitySummarySlice';
 
 export function HomePage() {
   const userInfo = useSelector(state => state.userInfo);
@@ -21,6 +22,7 @@ export function HomePage() {
   const summary2 = useSelector(state => state.summary2);
   const outcomeMetrics = useSelector(state => state.outcomeMetrics);
   const behaviorMetrics = useSelector(state => state.behaviorMetrics);
+  const opportunitySummary = useSelector(state => state.opportunitySummary);
   const dispatch = useDispatch();
 
   useEffect(async () => {
@@ -30,13 +32,14 @@ export function HomePage() {
     await dispatch(fetchSummary2());
     await dispatch(fetchOutcomeMetrics());
     await dispatch(fetchBehaviorMetrics());
+    await dispatch(fetchOpportunitySummary());
   });
 
   return (
     <div className="App tw-bg-gray-100 tw-h-screen">
-      <SideNavBar />
-      <TopNavBar />
-      <section className="tw-h-full tw-mx-8 tw-pt-16">
+      <section className="tw-h-auto tw-mx-8 tw-pt-16">
+        <SideNavBar />
+        <TopNavBar />
         <div className="tw-flex tw-justify-between tw-mb-7 tw-mx-6">
           <NbosUserInfoTemplate userInfo={userInfo} />
           <NbosClientInfoTemplate
@@ -45,12 +48,14 @@ export function HomePage() {
             summary2={summary2}
           />
         </div>
-        <NbosMetricsTemplate
-          userInfo={userInfo}
-          outcomeMetrics={outcomeMetrics}
-          behaviorMetrics={behaviorMetrics}
-        />
-        <NbosPipelineSurfaceCard />
+        <div>
+          <NbosMetricsTemplate
+            userInfo={userInfo}
+            outcomeMetrics={outcomeMetrics}
+            behaviorMetrics={behaviorMetrics}
+          />
+          <NbosPipelineTemplate opportunitySummary={opportunitySummary} />
+        </div>
       </section>
     </div>
   );
