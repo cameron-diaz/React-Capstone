@@ -15,7 +15,10 @@ export default function NbosMetricsCard({ userInfo, outcomeMetrics }) {
         />
         <NbosMetricSwitchToggle />
       </div>
-      <NbosOutcomeMetricsChart outcomeMetrics={outcomeMetrics} />
+      <NbosOutcomeMetricsChart
+        outcomeMetrics={outcomeMetrics}
+        oneToOne={true}
+      />
     </NbosMetricsSurfaceCard>
   );
 }

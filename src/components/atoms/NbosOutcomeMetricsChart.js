@@ -22,19 +22,23 @@ export default function NbosOutcomeMetricsChart({ outcomeMetrics }) {
     series: [
       {
         name: 'RM',
-        data: [`${outcomeMetrics.loanProdY1}`, 156, 947, 408, 6],
+        data: [
+          parseFloat(outcomeMetrics.loanProdY1),
+          parseFloat(outcomeMetrics.DepGrowthY1),
+          parseFloat(outcomeMetrics.TmGrowthY1),
+          parseFloat(outcomeMetrics.newClientsY1),
+        ],
       },
       {
         name: 'This Time Last Year',
-        data: [`${outcomeMetrics.loanProdY2}`, 841, 3714, 727, 0],
+        data: [
+          parseFloat(outcomeMetrics.loanProdY2),
+          parseFloat(outcomeMetrics.DepGrowthY2),
+          parseFloat(outcomeMetrics.TmGrowthY2),
+          parseFloat(outcomeMetrics.newClientsY2),
+        ],
       },
     ],
   };
-  return (
-    <HighchartsReact
-      highcharts={Highcharts}
-      options={options}
-      outcomeMetrics={outcomeMetrics}
-    />
-  );
+  return <HighchartsReact highcharts={Highcharts} options={options} />;
 }
