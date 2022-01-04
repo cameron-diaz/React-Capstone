@@ -1,5 +1,5 @@
-// import { Switch } from 'antd';
 import React from 'react';
+// import { Switch } from 'antd';
 import SwitchSelector from 'react-switch-selector';
 
 export default function NbosMetricsToggle2({ changeHandler }) {
@@ -29,7 +29,7 @@ export default function NbosMetricsToggle2({ changeHandler }) {
   );
 
   return (
-    <div className="tw-min-w-[40%] tw-h-8 tw-border-2 tw-border-blue-700 tw-border-separate">
+    <div className="tw-min-w-[40%] tw-h-8 tw-border-2 tw-border-blue-700">
       <SwitchSelector
         onChange={handleToggleSwitch}
         options={options}

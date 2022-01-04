@@ -7,17 +7,28 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
   const highChartOptions = {
     chart: {
       type: 'bar',
-      spacingBottom: 15,
-      spacingTop: 10,
-      spacingLeft: 10,
-      spacingRight: 10,
+      // // spacingBottom: 15,
+      // // spacingTop: 10,
+      // // spacingLeft: 10,
+      // // spacingRight: 10,
       marginLeft: 300,
       marginRight: 300,
-      width: null,
-      height: null,
+      // width: null,
+      // height: null,
+      // borderRadius: 12,
     },
     title: {
       text: chartTitle,
+    },
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          enabled: true,
+        },
+      },
+    },
+    legend: {
+      align: 'left',
     },
     xAxis: {
       categories:

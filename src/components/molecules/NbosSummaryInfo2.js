@@ -1,5 +1,6 @@
 import React from 'react';
 import NbosSubTextBottomLabel from '../atoms/NbosSubTextBottomLabel';
+import NbosSubTextBottomLeftBorder from '../atoms/NbosSubTextBottomLeftBorder';
 import NbosSurfaceCard from '../atoms/NbosSurfaceCard';
 
 export default function NbosSummaryInfo2({ summary2 }) {
@@ -10,18 +11,14 @@ export default function NbosSummaryInfo2({ summary2 }) {
           topLabel={summary2.rev}
           subTextLabel="TTM Revenue"
         />
-        <div className="tw-border-l-2 tw">
-          <NbosSubTextBottomLabel
-            topLabel={summary2.avgRaroc}
-            subTextLabel="TTM AVG. RAROC"
-          />
-        </div>
-        <div className="tw-border-l-2">
-          <NbosSubTextBottomLabel
-            topLabel={summary2.freeEquivCardLoadComm}
-            subTextLabel="Free Equivalent + Card % Loan Commit"
-          />
-        </div>
+        <NbosSubTextBottomLeftBorder
+          topLabel={summary2.avgRaroc}
+          subTextLabel="TTM AVG. RAROC"
+        />
+        <NbosSubTextBottomLeftBorder
+          topLabel={summary2.freeEquivCardLoadComm}
+          subTextLabel="Free Equivalent + Card % Loan Commit"
+        />
       </div>
     </NbosSurfaceCard>
   );
