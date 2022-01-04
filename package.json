@@ -17,6 +17,8 @@
     "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "13.5.0",
+    "ag-grid-community": "^26.2.1",
+    "ag-grid-react": "^26.2.0",
     "antd": "^4.16.13",
     "autoprefixer": "^9.8.8",
     "axios": "^0.24.0",

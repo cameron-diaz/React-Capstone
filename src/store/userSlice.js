@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import services from './services';
 
 export const fetchUserInfo = createAsyncThunk('user/setUserInfo', async () => {
-  console.log('fetch user info');
   const response = await services.getUsers();
   console.log(response.data);
   return response.data[0];

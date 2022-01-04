@@ -38,5 +38,5 @@ export default function NbosClientInfo({ clientInfo }) {
   );
 }
 
-// git push https://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@github.com/cdiazit5/React-Capstone.git
+// git push https://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@github.com/cdiazit5/React-Capstone.git
 //

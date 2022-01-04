@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './style.css';
 import { fetchUserInfo } from '../../../store/userSlice';
@@ -25,6 +25,17 @@ export function HomePage() {
   const opportunitySummary = useSelector(state => state.opportunitySummary);
   const dispatch = useDispatch();
 
+  const [metricsData, setMetricsData] = useState('outcome');
+
+  const handleMetricToggle = async value => {
+    setMetricsData(value);
+    if (value === 'behavior ' && behaviorMetrics.length === 0) {
+      await dispatch(fetchBehaviorMetrics());
+    } else if (value === 'outcome' && outcomeMetrics.length === 0) {
+      await dispatch(fetchOutcomeMetrics());
+    }
+    console.log(value);
+  };
   useEffect(async () => {
     await dispatch(fetchUserInfo());
     await dispatch(fetchClientInfo());
@@ -53,6 +64,11 @@ export function HomePage() {
             userInfo={userInfo}
             outcomeMetrics={outcomeMetrics}
             behaviorMetrics={behaviorMetrics}
+            onChange={handleMetricToggle}
+            chartType={metricsData}
+            chartData={
+              metricsData === 'behavior' ? behaviorMetrics : outcomeMetrics
+            }
           />
           <NbosPipelineTemplate opportunitySummary={opportunitySummary} />
         </div>

@@ -5,38 +5,38 @@ const options = [
   {
     label: 'All',
     value: 'all',
-    selectedBackgroundColor: '#ffffff',
-    selectedFontColor: '#0166CC',
+    selectedBackgroundColor: '#0166CC',
+    selectedFontColor: '#ffffff',
   },
   {
     label: 'Credit',
     value: 'credit',
-    selectedBackgroundColor: '#ffffff',
-    selectedFontColor: '#0166CC',
+    selectedBackgroundColor: '#0166CC',
+    selectedFontColor: '#ffffff',
   },
   {
     label: 'Deposit',
     value: 'deposit',
-    selectedBackgroundColor: '#ffffff',
-    selectedFontColor: '#0166CC',
+    selectedBackgroundColor: '#0166CC',
+    selectedFontColor: '#ffffff',
   },
   {
     label: 'Capital Markets',
     value: 'capital',
-    selectedBackgroundColor: '#ffffff',
-    selectedFontColor: '#0166CC',
+    selectedBackgroundColor: '#0166CC',
+    selectedFontColor: '#ffffff',
   },
   {
     label: 'Treasury Management',
     value: 'treasury',
-    selectedBackgroundColor: '#ffffff',
-    selectedFontColor: '#0166CC',
+    selectedBackgroundColor: '#0166CC',
+    selectedFontColor: '#ffffff',
   },
   {
     label: 'Other',
     value: 'other',
-    selectedBackgroundColor: '#ffffff',
-    selectedFontColor: '#0166CC',
+    selectedBackgroundColor: '#0166CC',
+    selectedFontColor: '#ffffff',
   },
 ];
 
@@ -48,15 +48,16 @@ const initialSelectedIndex = options.findIndex(({ value }) => value === 'bar');
 
 export const NbosPipelineSwitchToggle = () => {
   return (
-    <div className="tw-text-center tw-rounded-lg tw-p-2 tw-w-1/2 tw-h-[3rem]">
+    <div className="tw-text-center tw-rounded-lg tw-p-2 tw-h-[3rem] tw-w-[75%] tw-items-center tw-my-6 tw-ml-[12.5%] tw-pt-2">
       <SwitchSelector
         onChange={onChange}
         options={options}
         initialSelectedIndex={initialSelectedIndex}
-        backgroundColor={'#0166CC'}
-        fontColor={'#f5f6fa'}
+        backgroundColor={'#ffffff'}
+        fontColor={'#0166CC'}
         wrapperBorderRadius={18}
-        optionBorderRadius={4}
+        border="2px solid rgba(1,102,204,100)"
+        optionBorderRadius={18}
       />
     </div>
   );
