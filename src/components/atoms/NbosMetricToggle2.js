@@ -29,16 +29,16 @@ export default function NbosMetricsToggle2({ changeHandler }) {
   );
 
   return (
-    <div className="tw-min-w-[40%] tw-h-8 tw-border-2 tw-border-blue-700">
+    <div className="tw-min-w-[40%] tw-h-9">
       <SwitchSelector
         onChange={handleToggleSwitch}
         options={options}
         initialSelectedIndex={initialSelectedIndex}
         backgroundColor={'#ffffff'}
         fontColor={'#0166CC'}
-        wrapperBorderRadius={3}
-        optionBorderRadius={3}
-        // border="solid rgba(1,102,204,100)"
+        wrapperBorderRadius={5}
+        optionBorderRadius={5}
+        border="solid rgba(1,102,204,100)"
       />
       {/* <Switch
         checkedChildren="Outcome Metrics"

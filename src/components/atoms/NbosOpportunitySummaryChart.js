@@ -7,6 +7,8 @@ export default function NbosOpportunityChart({ opportunitySummary }) {
   const options = {
     chart: {
       type: 'column',
+      marginLeft: 150,
+      marginRight: 150,
     },
     title: {
       text: chartTitle,

@@ -6,6 +6,7 @@ import userReducer from './userSlice';
 import outcomeMetricsReducer from './outcomeMetricsSlice';
 import behaviorMetricsReducer from './behaviorMetricsSlice';
 import opportunitySummaryReducer from './opportunitySummarySlice';
+import opportunityDetailReducer from './opportunityDetailSlice';
 
 export const store = configureStore(
   {
@@ -17,6 +18,7 @@ export const store = configureStore(
       outcomeMetrics: outcomeMetricsReducer,
       behaviorMetrics: behaviorMetricsReducer,
       opportunitySummary: opportunitySummaryReducer,
+      opportunityDetail: opportunityDetailReducer,
     },
   },
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

@@ -12,6 +12,7 @@ import { fetchSummary1 } from '../../../store/summary1Slice';
 import { fetchSummary2 } from '../../../store/summary2Slice';
 import { fetchOutcomeMetrics } from '../../../store/outcomeMetricsSlice';
 import { fetchBehaviorMetrics } from '../../../store/behaviorMetricsSlice';
+import { fetchOpportunityDetail } from '../../../store/opportunityDetailSlice';
 import NbosPipelineTemplate from '../../templates/NbosPipelineTemplate';
 import { fetchOpportunitySummary } from '../../../store/opportunitySummarySlice';
 
@@ -23,6 +24,7 @@ export function HomePage() {
   const outcomeMetrics = useSelector(state => state.outcomeMetrics);
   const behaviorMetrics = useSelector(state => state.behaviorMetrics);
   const opportunitySummary = useSelector(state => state.opportunitySummary);
+  const opportunityDetail = useSelector(state => state.opportunityDetail);
   const dispatch = useDispatch();
 
   const [metricsData, setMetricsData] = useState('outcome');
@@ -44,6 +46,7 @@ export function HomePage() {
     await dispatch(fetchOutcomeMetrics());
     await dispatch(fetchBehaviorMetrics());
     await dispatch(fetchOpportunitySummary());
+    await dispatch(fetchOpportunityDetail());
   });
 
   return (
@@ -70,7 +73,10 @@ export function HomePage() {
               metricsData === 'behavior' ? behaviorMetrics : outcomeMetrics
             }
           />
-          <NbosPipelineTemplate opportunitySummary={opportunitySummary} />
+          <NbosPipelineTemplate
+            opportunitySummary={opportunitySummary}
+            opportunityDetail={opportunityDetail}
+          />
         </div>
       </section>
     </div>
