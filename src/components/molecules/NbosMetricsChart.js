@@ -7,15 +7,8 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
   const highChartOptions = {
     chart: {
       type: 'bar',
-      // // spacingBottom: 15,
-      // // spacingTop: 10,
-      // // spacingLeft: 10,
-      // // spacingRight: 10,
       marginLeft: 300,
       marginRight: 300,
-      // width: null,
-      // height: null,
-      // borderRadius: 12,
     },
     title: {
       text: chartTitle,
@@ -26,11 +19,18 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
           enabled: true,
         },
       },
+      series: {
+        borderRadius: 5,
+        pointWidth: 8,
+        pointPadding: 0,
+        groupPadding: 0.7,
+      },
     },
     legend: {
       align: 'left',
     },
     xAxis: {
+      reverse: true,
       categories:
         chartType === 'behavior'
           ? ['Loan Production', 'Deposit Growth', 'TM Growth', 'New Clients']
@@ -66,24 +66,9 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
     };
     const series = [
       {
-        name: 'RM',
-        data:
-          chartType === 'outcome'
-            ? [
-                parseFloat(chartData.loanProdY1),
-                parseFloat(chartData.DepGrowthY1),
-                parseFloat(chartData.TmGrowthY1),
-                parseFloat(chartData.newClientsY1),
-              ]
-            : [
-                parseFloat(chartData.avgOverallRMSatY1),
-                parseFloat(chartData.clientCallsY1),
-                parseFloat(chartData.prospectCallsY1),
-                parseFloat(chartData.strategiesUploadedY1),
-              ],
-      },
-      {
         name: 'This Time Last Year',
+        color: '#808080',
+        legendIndex: 2,
         data:
           chartType === 'outcome'
             ? [
@@ -95,8 +80,38 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
             : [
                 parseFloat(chartData.avgOverallRMSatY2),
                 parseFloat(chartData.clientCallsY2),
-                parseFloat(chartData.prospectCallsY2),
+                // parseFloat(chartData.prospectCallsY2),
+                {
+                  y: parseFloat(chartData.prospectCallsY2),
+                  color: `${
+                    chartData.prospectCallsY2 > 5 ? '#808080' : '#FF0000'
+                  }`,
+                },
                 parseFloat(chartData.strategiesUploadedY2),
+              ],
+      },
+      {
+        name: 'RM',
+        color: '#0000FF',
+        legendIndex: 1,
+        data:
+          chartType === 'outcome'
+            ? [
+                parseFloat(chartData.loanProdY1),
+                parseFloat(chartData.DepGrowthY1),
+                parseFloat(chartData.TmGrowthY1),
+                parseFloat(chartData.newClientsY1),
+              ]
+            : [
+                parseFloat(chartData.avgOverallRMSatY1),
+                parseFloat(chartData.clientCallsY1),
+                {
+                  y: parseFloat(chartData.prospectCallsY1),
+                  color: `${
+                    chartData.prospectCallsY1 > 5 ? '#0000FF' : '#FF0000'
+                  }`,
+                },
+                parseFloat(chartData.strategiesUploadedY1),
               ],
       },
     ];

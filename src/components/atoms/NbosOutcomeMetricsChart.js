@@ -19,6 +19,12 @@ export default function NbosOutcomeMetricsChart({ outcomeMetrics }) {
         'New Clients',
       ],
     },
+    plotOptions: {
+      series: {
+        borderRadius: 5,
+        pointPadding: 0.01,
+      },
+    },
     series: [
       {
         name: 'RM',

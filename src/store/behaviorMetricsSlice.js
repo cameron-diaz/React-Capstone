@@ -5,7 +5,7 @@ export const fetchBehaviorMetrics = createAsyncThunk(
   'behavior/setBehaviorMetrics',
   async () => {
     const reponse = await services.getBehaviorMetrics();
-    console.log(reponse.data);
+    // console.log(reponse.data);
     return reponse.data[0];
   },
 );
@@ -25,8 +25,8 @@ export const behaviorMetricsSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchBehaviorMetrics.fulfilled]: (state, { payload }) => {
-      state.avgOverallRMSatY1 = `${payload.avg_overall_rm_sat_y1}`;
-      state.avgOverallRMSatY2 = `${payload.avg_overall_rm_sat_y2}`;
+      state.avgOverallRMSatY1 = `${payload.avg_overall_rm_sat_y1 / 100000}`;
+      state.avgOverallRMSatY2 = `${payload.avg_overall_rm_sat_y2 / 100000}`;
       state.clientCallsY1 = `${payload.client_calls_y1}`;
       state.clientCallsY2 = `${payload.client_calls_y2}`;
       state.prospectCallsY1 = `${payload.prospect_calls_y1}`;

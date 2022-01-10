@@ -5,7 +5,7 @@ export const fetchClientInfo = createAsyncThunk(
   'client/setClientInfo',
   async () => {
     const reponse = await services.getClientInfo();
-    console.log(reponse.data);
+    // console.log(reponse.data);
     return reponse.data[0];
   },
 );
