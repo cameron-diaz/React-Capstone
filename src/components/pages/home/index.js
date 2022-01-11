@@ -47,7 +47,7 @@ export function HomePage() {
     await dispatch(fetchBehaviorMetrics());
     await dispatch(fetchOpportunitySummary());
     await dispatch(fetchOpportunityDetail());
-  });
+  }, []);
 
   return (
     <div className="App tw-bg-gray-100 tw-h-screen">

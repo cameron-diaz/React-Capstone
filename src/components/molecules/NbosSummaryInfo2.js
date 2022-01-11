@@ -6,7 +6,7 @@ import NbosSurfaceCard from '../atoms/NbosSurfaceCard';
 export default function NbosSummaryInfo2({ summary2 }) {
   return (
     <NbosSurfaceCard>
-      <div className="tw-grid tw-grid-cols-3 tw-items-stretch tw-min-h-[100px]">
+      <div className="tw-grid tw-grid-cols-3 tw-items-center tw-min-h-[100px]">
         <NbosSubTextBottomLabel
           topLabel={summary2.rev}
           subTextLabel="TTM Revenue"

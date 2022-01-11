@@ -6,8 +6,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 export default function NbosPipelineOppGrid({ opportunityDetail }) {
   // map through array of relationship data?
-  const rowData = [opportunityDetail];
-  console.log('rowData:', rowData);
+
   // const rowData = [
   //   {
   //     relationship: `Relationship 1`,
@@ -54,18 +53,28 @@ export default function NbosPipelineOppGrid({ opportunityDetail }) {
   return (
     <div
       className="ag-theme-alpine"
-      style={{ height: 400, minwidth: 1000, marginTop: 20 }}
+      style={{
+        height: 400,
+        minwidth: 1000,
+        marginTop: 20,
+        marginLeft: 10,
+        marginRight: 10,
+      }}
     >
-      <AgGridReact rowData={rowData}>
-        <AgGridColumn field="relationship"></AgGridColumn>
-        <AgGridColumn field="product"></AgGridColumn>
+      <AgGridReact rowData={opportunityDetail.opportunities}>
+        <AgGridColumn field="id" headerName="Relationship"></AgGridColumn>
+        <AgGridColumn field="product_type"></AgGridColumn>
         <AgGridColumn
-          field="salesStage"
+          field="sales_stage"
           headerName="Sales Stage"
         ></AgGridColumn>
-        <AgGridColumn field="revenue"></AgGridColumn>
         <AgGridColumn
-          field="dateClosed"
+          field="revenue"
+          sort="desc"
+          sortable={true}
+        ></AgGridColumn>
+        <AgGridColumn
+          field="date_closed"
           headerName="Date Closed"
         ></AgGridColumn>
         <AgGridColumn field="details"></AgGridColumn>

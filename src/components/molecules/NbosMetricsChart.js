@@ -30,6 +30,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
       align: 'left',
     },
     xAxis: {
+      lineWidth: 0,
       reverse: true,
       categories:
         chartType === 'behavior'
@@ -42,6 +43,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
             ],
     },
     yAxis: {
+      visible: false,
       title: {
         text: null,
       },

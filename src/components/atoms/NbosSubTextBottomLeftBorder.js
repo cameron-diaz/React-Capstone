@@ -6,7 +6,7 @@ export default function NbosSubTextBottomLeftBorder({ ...props }) {
     // self center?
     <div className="tw-border-l-2 tw-h-full tw-items-center tw-flex">
       <div className="tw-max-w-auto tw-py-2 tw-px-4 tw-self-center">
-        <p className="tw-mr-auto tw-text-md tw-flex tw-font-bold">
+        <p className="tw-mr-auto tw-text-lg tw-flex tw-font-bold">
           {props.topLabel}
         </p>
         <p className="tw-text-gray-500 tw-text-xs tw-mr-auto tw-flex tw-text-left">
