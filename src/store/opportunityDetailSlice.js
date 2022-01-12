@@ -13,7 +13,7 @@ export const fetchOpportunityDetail = createAsyncThunk(
 export const opportunityDetailSlice = createSlice({
   name: 'opportunityDetail',
   initialState: {
-    opporunities: [],
+    opportunities: [],
   },
   reducers: {},
   extraReducers: {

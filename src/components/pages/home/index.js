@@ -54,7 +54,7 @@ export function HomePage() {
       <section className="tw-h-auto tw-mx-8 tw-pt-16">
         <SideNavBar />
         <TopNavBar />
-        <div className="tw-flex tw-justify-between tw-mb-7 tw-mx-6">
+        <div className="tw-flex tw-justify-between tw-mb-7 tw-mx-6 tw-gap-x-4">
           <NbosUserInfoTemplate userInfo={userInfo} />
           <NbosClientInfoTemplate
             clientInfo={clientInfo}

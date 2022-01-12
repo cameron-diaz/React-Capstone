@@ -7,8 +7,8 @@ import NbosSubTextTopLabel from '../atoms/NbosSubTextTopLabel';
 export default function NbosUserInfoTemplate({ userInfo }) {
   return (
     <NbosSurfaceCard>
-      <div className="tw-grid tw-grid-rows-4 tw-items-center tw-w-[17rem] tw-mx-3">
-        <div className="tw-py-2">
+      <div className="tw-grid tw-grid-rows-4 tw-items-center tw-w-[19rem] tw-mx-3 tw-py-8">
+        <div className="">
           <Avatar
             size={85}
             style={{ backgroundColor: '#87d068' }}
