@@ -13,9 +13,13 @@ export default function NbosPipelineTemplate({
 }) {
   const [show5, showAll] = useState(true);
   const onClick = () => showAll(!show5);
-  const newArrayTop5 = opportunityDetail.opportunities.slice(0, 5);
-  newArrayTop5.sort();
-  console.log('new array', newArrayTop5, show5);
+  const arrayForSort = [...opportunityDetail.opportunities];
+  const sortedArray = arrayForSort.sort(function (a, b) {
+    return b.revenue - a.revenue;
+  });
+  const newArrayTop5 = sortedArray.slice(0, 5);
+
+  console.log('new array', sortedArray, show5);
 
   return (
     <div className="tw-mx-6 tw-mt-3">
@@ -34,11 +38,11 @@ export default function NbosPipelineTemplate({
           <NbosTop5OppTag />
           <NbosPipelineOppGrid
             opportunityDetail={opportunityDetail}
-            top5={newArrayTop5.sort()}
+            top5={newArrayTop5}
             show5={show5}
           />
         </div>
-        <button onClick={onClick}>
+        <button onClick={onClick} className="tw-font-blue">
           {show5 ? 'View Full Pipeline' : 'View Top 5'}
         </button>
       </NbosPipelineSurfaceCard>

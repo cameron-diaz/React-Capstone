@@ -4,6 +4,11 @@ import HighchartsReact from 'highcharts-react-official';
 
 export const NbosMetricsChart = ({ chartData, chartType }) => {
   const chartTitle = '';
+  const twoDecimals = a => {
+    const number = parseFloat(a);
+    return number.toFixed(2);
+  };
+  console.log(twoDecimals(chartData.loanProdY2));
   const highChartOptions = {
     chart: {
       type: 'bar',
@@ -74,7 +79,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
         data:
           chartType === 'outcome'
             ? [
-                parseFloat(chartData.loanProdY2),
+                twoDecimals(chartData.loanProdY2),
                 parseFloat(chartData.DepGrowthY2),
                 parseFloat(chartData.TmGrowthY2),
                 parseFloat(chartData.newClientsY2),
@@ -82,7 +87,6 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
             : [
                 parseFloat(chartData.avgOverallRMSatY2),
                 parseFloat(chartData.clientCallsY2),
-                // parseFloat(chartData.prospectCallsY2),
                 {
                   y: parseFloat(chartData.prospectCallsY2),
                   color: `${

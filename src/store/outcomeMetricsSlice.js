@@ -10,6 +10,8 @@ export const fetchOutcomeMetrics = createAsyncThunk(
   },
 );
 
+// simplify the numbers here?
+
 export const outcomeMetricsSlice = createSlice({
   name: 'outcome',
   initialState: {
@@ -25,10 +27,10 @@ export const outcomeMetricsSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchOutcomeMetrics.fulfilled]: (state, { payload }) => {
-      state.loanProdY1 = `${payload.loan_prod_y1}`;
-      state.loanProdY2 = `${payload.loan_prod_y2}`;
-      state.DepGrowthY1 = `${payload.dep_growth_y1}`;
-      state.DepGrowthY2 = `${payload.dep_growth_y2}`;
+      state.loanProdY1 = `${payload.loan_prod_y1 / 100000}`;
+      state.loanProdY2 = `${payload.loan_prod_y2 / 100000}`;
+      state.DepGrowthY1 = `${payload.dep_growth_y1 / 100000}`;
+      state.DepGrowthY2 = `${payload.dep_growth_y2 / 100000}`;
       state.tmGrowthY1 = `${payload.tm_growth_y1}`;
       state.tmGrowthY2 = `${payload.tm_growth_y2}`;
       state.newClientsY1 = `${payload.new_clients_y1}`;

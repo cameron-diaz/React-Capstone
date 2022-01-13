@@ -20,7 +20,10 @@ export default function NbosPipelineOppGrid({
       }}
     >
       <AgGridReact rowData={show5 ? top5 : opportunityDetail.opportunities}>
-        <AgGridColumn field="id" headerName="Relationship"></AgGridColumn>
+        <AgGridColumn
+          field="client_name"
+          headerName="Relationship"
+        ></AgGridColumn>
         <AgGridColumn
           field="product_type"
           headerName="Product Type"
@@ -38,8 +41,10 @@ export default function NbosPipelineOppGrid({
           field="date_closed"
           headerName="Date Closed"
         ></AgGridColumn>
-        <AgGridColumn field="details"></AgGridColumn>
+        <AgGridColumn field=""></AgGridColumn>
       </AgGridReact>
     </div>
   );
 }
+
+// highlight sorted colmn
