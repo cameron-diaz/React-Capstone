@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import { formattingChartValues } from '../../utilities';
 
 export const NbosMetricsChart = ({ chartData, chartType }) => {
   const chartTitle = '';
-  const twoDecimals = a => {
-    const number = parseFloat(a);
-    return number.toFixed(2);
-  };
-  console.log(twoDecimals(chartData.loanProdY2));
+
+  console.log('type of', typeof formattingChartValues(chartData.loanProdY2));
+
   const highChartOptions = {
     chart: {
       type: 'bar',
@@ -22,6 +21,16 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
       bar: {
         dataLabels: {
           enabled: true,
+          formatter: function () {
+            const hundredThousand = this.y * 10000;
+            if (hundredThousand > 1000 && hundredThousand < 1000000) {
+              return `$` + this.y + `K`;
+            } else if (this.y > 1000000) {
+              return `$` + this.y + `MM`;
+            } else if (this.y < 100) {
+              return this.y;
+            }
+          },
         },
       },
       series: {
@@ -79,13 +88,16 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
         data:
           chartType === 'outcome'
             ? [
-                twoDecimals(chartData.loanProdY2),
-                parseFloat(chartData.DepGrowthY2),
+                {
+                  y: parseFloat(formattingChartValues(chartData.loanProdY2)),
+                  dataLabels: { className: 'data-labels' },
+                },
+                parseFloat(formattingChartValues(chartData.DepGrowthY2)),
                 parseFloat(chartData.TmGrowthY2),
                 parseFloat(chartData.newClientsY2),
               ]
             : [
-                parseFloat(chartData.avgOverallRMSatY2),
+                parseFloat(formattingChartValues(chartData.avgOverallRMSatY2)),
                 parseFloat(chartData.clientCallsY2),
                 {
                   y: parseFloat(chartData.prospectCallsY2),
@@ -103,13 +115,13 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
         data:
           chartType === 'outcome'
             ? [
-                parseFloat(chartData.loanProdY1),
-                parseFloat(chartData.DepGrowthY1),
+                parseFloat(formattingChartValues(chartData.loanProdY1)),
+                parseFloat(formattingChartValues(chartData.DepGrowthY1)),
                 parseFloat(chartData.TmGrowthY1),
                 parseFloat(chartData.newClientsY1),
               ]
             : [
-                parseFloat(chartData.avgOverallRMSatY1),
+                parseFloat(formattingChartValues(chartData.avgOverallRMSatY1)),
                 parseFloat(chartData.clientCallsY1),
                 {
                   y: parseFloat(chartData.prospectCallsY1),

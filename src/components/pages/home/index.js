@@ -38,6 +38,7 @@ export function HomePage() {
     }
     console.log(value);
   };
+
   useEffect(async () => {
     await dispatch(fetchUserInfo());
     await dispatch(fetchClientInfo());

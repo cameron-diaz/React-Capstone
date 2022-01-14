@@ -1,6 +1,7 @@
 import React from 'react';
 import NbosSubTextBottomLabel from '../atoms/NbosSubTextBottomLabel';
 import NbosSubTextBottomLeftBorder from '../atoms/NbosSubTextBottomLeftBorder';
+import { formattingCurrency } from '../../utilities';
 
 import NbosSurfaceCard from '../atoms/NbosSurfaceCard';
 
@@ -9,15 +10,15 @@ export default function NbosSummaryInfo1({ summary1 }) {
     <NbosSurfaceCard>
       <div className="tw-grid tw-grid-cols-3 tw-min-h-[100px] tw-items-center">
         <NbosSubTextBottomLabel
-          topLabel={summary1.avgLoanBal}
+          topLabel={formattingCurrency(summary1.avgLoanBal)}
           subTextLabel="TTM Avg Loan Balance"
         />
         <NbosSubTextBottomLeftBorder
-          topLabel={summary1.avgCreditComm}
+          topLabel={formattingCurrency(summary1.avgCreditComm)}
           subTextLabel="TTM Avg Credit Commitments"
         />
         <NbosSubTextBottomLeftBorder
-          topLabel={summary1.depBal}
+          topLabel={formattingCurrency(summary1.depBal)}
           subTextLabel="TTM Deposit Balance"
         />
       </div>
