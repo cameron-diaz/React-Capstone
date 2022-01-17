@@ -42,6 +42,7 @@ export default function NbosOpportunityChart({ opportunitySummary }) {
     series: [
       {
         name: '2021',
+        color: '#0166CC',
         data: [
           parseFloat(opportunitySummary.stageOne2021),
           parseFloat(opportunitySummary.stageTwo2021),
@@ -52,6 +53,7 @@ export default function NbosOpportunityChart({ opportunitySummary }) {
       },
       {
         name: '2020',
+        color: '#9AC1EB',
         data: [
           parseFloat(opportunitySummary.stageOne2020),
           parseFloat(opportunitySummary.stageTwo2020),

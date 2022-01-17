@@ -22,27 +22,45 @@ export default function NbosPipelineOppGrid({
     return date;
   };
 
+  const cellStyle = {
+    justifyContent: 'center',
+    display: 'flex',
+    alignItems: 'center',
+  };
+
   return (
     <div
       className="ag-theme-material"
       style={{
-        height: 400,
-        minwidth: 1000,
+        height: 500,
+        minwidth: 800,
         marginTop: 20,
       }}
     >
-      <AgGridReact rowData={show5 ? top5 : opportunityDetail.opportunities}>
+      <AgGridReact
+        pagination={true}
+        paginationAutoPageSize={true}
+        rowHeight={70}
+        rowData={show5 ? top5 : opportunityDetail.opportunities}
+        style={{ width: '100%', height: '100%;' }}
+      >
         <AgGridColumn
           field="client_name"
           headerName="Relationship"
+          sortable={true}
+          cellStyle={cellStyle}
         ></AgGridColumn>
         <AgGridColumn
           field="product_type"
           headerName="Product Type"
+          sortable={true}
+          cellStyle={cellStyle}
         ></AgGridColumn>
         <AgGridColumn
           field="sales_stage"
           headerName="Sales Stage"
+          sortable={true}
+          cellStyle={cellStyle}
         ></AgGridColumn>
         <AgGridColumn
           field="revenue"
@@ -51,13 +69,16 @@ export default function NbosPipelineOppGrid({
           valueFormatter={a => {
             return formattingGridValues(a.value);
           }}
+          cellStyle={cellStyle}
         ></AgGridColumn>
         <AgGridColumn
           field="date_closed"
           headerName="Date Closed"
           valueFormatter={formatter}
+          sortable={true}
+          cellStyle={cellStyle}
         ></AgGridColumn>
-        <AgGridColumn field=""></AgGridColumn>
+        {/* <AgGridColumn field=""></AgGridColumn> */}
       </AgGridReact>
     </div>
   );

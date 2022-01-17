@@ -83,7 +83,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
     const series = [
       {
         name: 'This Time Last Year',
-        color: '#808080',
+        color: '#C4C4C4',
         legendIndex: 2,
         data:
           chartType === 'outcome'
@@ -110,7 +110,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
       },
       {
         name: 'RM',
-        color: '#0000FF',
+        color: '#0166cc',
         legendIndex: 1,
         data:
           chartType === 'outcome'

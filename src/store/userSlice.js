@@ -29,3 +29,5 @@ export const userSlice = createSlice({
 export const { setUserInfo } = userSlice.actions;
 
 export default userSlice.reducer;
+
+// $ curl -u cdiazit5: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 https://api.github.com/cdiazit5

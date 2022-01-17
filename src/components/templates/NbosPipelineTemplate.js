@@ -42,7 +42,10 @@ export default function NbosPipelineTemplate({
             show5={show5}
           />
         </div>
-        <button onClick={onClick} className="tw-font-blue">
+        <button
+          onClick={onClick}
+          className="tw-mb-20 tw-mt-6 tw-text-[#0166cc] tw-text-lg"
+        >
           {show5 ? 'View Full Pipeline' : 'View Top 5'}
         </button>
       </NbosPipelineSurfaceCard>
