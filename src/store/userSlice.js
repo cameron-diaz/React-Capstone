@@ -19,7 +19,7 @@ export const userSlice = createSlice({
   extraReducers: {
     [fetchUserInfo.fulfilled]: (state, { payload }) => {
       state.userName = `${payload.first_name} ${payload.last_name}`;
-      state.hireDate = '1/1/2021';
+      state.hireDate = '10/23/2017';
       state.role = payload.role;
       state.teamLead = `${payload.tl_first_name} ${payload.tl_last_name} `;
     },
