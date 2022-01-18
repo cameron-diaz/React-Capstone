@@ -19,21 +19,11 @@ export default function NbosPipelineTemplate({
   });
   const newArrayTop5 = sortedArray.slice(0, 5);
 
-  console.log('new array', sortedArray, show5);
-
   return (
     <div className="tw-mx-6 tw-mt-3">
       <NbosPipelineSurfaceCard>
         <NbosPipelineSwitchToggle />
         <NbosOpportunitySummaryChart opportunitySummary={opportunitySummary} />
-        {/* <div>
-          <NbosTop5OppTag />
-          {show5 ? (
-            <NbosPipelineOppGrid opportunityDetail={newArrayTop5} />
-          ) : (
-            <NbosPipelineOppGrid opportunityDetail={opportunityDetail} />
-          )}
-        </div> */}
         <div>
           <NbosTop5OppTag />
           <NbosPipelineOppGrid

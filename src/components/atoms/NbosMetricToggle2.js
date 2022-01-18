@@ -8,7 +8,7 @@ export default function NbosMetricsToggle2({ changeHandler }) {
       label: 'Outcome Metrics',
       value: 'outcome',
       selectedBackgroundColor: '#0166CC',
-      innerHeight: 50,
+      // innerHeight: 50,
       selectedFontColor: '#ffffff',
     },
     {
@@ -31,6 +31,7 @@ export default function NbosMetricsToggle2({ changeHandler }) {
   return (
     <div className="tw-min-w-[40%] tw-h-9">
       <SwitchSelector
+        style={{}}
         onChange={handleToggleSwitch}
         options={options}
         initialSelectedIndex={initialSelectedIndex}

@@ -9,13 +9,13 @@ import { formattingGridValues } from '../../utilities';
 // import { enUS } from 'date-fns/locale';
 import format from 'date-fns/format';
 // import { formattingDates } from '../../utilities';
+import './gridStyles.css';
 
 export default function NbosPipelineOppGrid({
   opportunityDetail,
   top5,
   show5,
 }) {
-  console.log(new Date('2021-01-26T08:53:59Z'));
   const formatter = a => {
     const date =
       a.value !== undefined ? format(new Date(a.value), 'yyyy/MM/dd') : '';
@@ -26,6 +26,17 @@ export default function NbosPipelineOppGrid({
     justifyContent: 'center',
     display: 'flex',
     alignItems: 'center',
+  };
+
+  const detailStyle = {
+    color: 'blue',
+    justifyContent: 'center',
+    display: 'flex',
+    alignItems: 'center',
+  };
+
+  const defaultColDef = {
+    headerClass: 'header-class',
   };
 
   return (
@@ -41,6 +52,7 @@ export default function NbosPipelineOppGrid({
         pagination={true}
         paginationAutoPageSize={true}
         rowHeight={70}
+        defaultColDef={defaultColDef}
         rowData={show5 ? top5 : opportunityDetail.opportunities}
         style={{ width: '100%', height: '100%;' }}
       >
@@ -78,7 +90,11 @@ export default function NbosPipelineOppGrid({
           sortable={true}
           cellStyle={cellStyle}
         ></AgGridColumn>
-        {/* <AgGridColumn field=""></AgGridColumn> */}
+        <AgGridColumn
+          field="details"
+          headerName=""
+          cellStyle={detailStyle}
+        ></AgGridColumn>
       </AgGridReact>
     </div>
   );

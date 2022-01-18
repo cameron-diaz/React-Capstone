@@ -56,12 +56,12 @@ export const formattingGridValues = value => {
 export const formattingChartValues = value => {
   const numberValue = parseFloat(value);
   if (numberValue > 1000 && numberValue < 1000000) {
-    const dividedValue = numberValue / 10000;
+    const dividedValue = numberValue / 1000;
     return twoDecimals(dividedValue);
   } else if (numberValue < 1000) {
     return twoDecimals(value);
   } else if (numberValue > 1000000) {
-    const dividedValue = numberValue / 1000000;
+    const dividedValue = numberValue / 100000;
     return twoDecimals(dividedValue);
   }
 };

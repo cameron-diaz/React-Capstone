@@ -5,9 +5,6 @@ import { formattingChartValues } from '../../utilities';
 
 export const NbosMetricsChart = ({ chartData, chartType }) => {
   const chartTitle = '';
-
-  console.log('type of', typeof formattingChartValues(chartData.loanProdY2));
-
   const highChartOptions = {
     chart: {
       type: 'bar',
@@ -22,13 +19,13 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
         dataLabels: {
           enabled: true,
           formatter: function () {
-            const hundredThousand = this.y * 10000;
-            if (hundredThousand > 1000 && hundredThousand < 1000000) {
+            const hundredThousand = this.y * 1000;
+            if (this.y < 100) {
+              return this.y + '';
+            } else if (hundredThousand > 10000 && hundredThousand < 1000000) {
               return `$` + this.y + `K`;
             } else if (this.y > 1000000) {
               return `$` + this.y + `MM`;
-            } else if (this.y < 100) {
-              return this.y;
             }
           },
         },
@@ -47,7 +44,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
       lineWidth: 0,
       reverse: true,
       categories:
-        chartType === 'behavior'
+        chartType === 'outcome'
           ? ['Loan Production', 'Deposit Growth', 'TM Growth', 'New Clients']
           : [
               'Avg Overall RM Satisfaction',
@@ -88,12 +85,9 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
         data:
           chartType === 'outcome'
             ? [
-                {
-                  y: parseFloat(formattingChartValues(chartData.loanProdY2)),
-                  dataLabels: { className: 'data-labels' },
-                },
+                parseFloat(formattingChartValues(chartData.loanProdY2)),
                 parseFloat(formattingChartValues(chartData.DepGrowthY2)),
-                parseFloat(chartData.TmGrowthY2),
+                parseFloat(formattingChartValues(chartData.tmGrowthY2)),
                 parseFloat(chartData.newClientsY2),
               ]
             : [
@@ -102,7 +96,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
                 {
                   y: parseFloat(chartData.prospectCallsY2),
                   color: `${
-                    chartData.prospectCallsY2 > 5 ? '#808080' : '#FF0000'
+                    chartData.prospectCallsY2 > 5 ? '#c4c4c4' : '##FF0000'
                   }`,
                 },
                 parseFloat(chartData.strategiesUploadedY2),
@@ -117,7 +111,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
             ? [
                 parseFloat(formattingChartValues(chartData.loanProdY1)),
                 parseFloat(formattingChartValues(chartData.DepGrowthY1)),
-                parseFloat(chartData.TmGrowthY1),
+                parseFloat(formattingChartValues(chartData.tmGrowthY1)),
                 parseFloat(chartData.newClientsY1),
               ]
             : [
@@ -126,7 +120,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
                 {
                   y: parseFloat(chartData.prospectCallsY1),
                   color: `${
-                    chartData.prospectCallsY1 > 5 ? '#0000FF' : '#FF0000'
+                    chartData.prospectCallsY1 > 5 ? '#0166CC' : '#FF0000'
                   }`,
                 },
                 parseFloat(chartData.strategiesUploadedY1),
