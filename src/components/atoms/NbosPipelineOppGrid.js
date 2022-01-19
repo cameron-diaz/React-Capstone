@@ -5,10 +5,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import { formattingGridValues } from '../../utilities';
-// import { parse } from 'date-fns';
-// import { enUS } from 'date-fns/locale';
 import format from 'date-fns/format';
-// import { formattingDates } from '../../utilities';
 import './gridStyles.css';
 
 export default function NbosPipelineOppGrid({
@@ -23,7 +20,7 @@ export default function NbosPipelineOppGrid({
   };
 
   const cellStyle = {
-    justifyContent: 'center',
+    justifyContent: 'left',
     display: 'flex',
     alignItems: 'center',
   };
@@ -37,6 +34,8 @@ export default function NbosPipelineOppGrid({
 
   const defaultColDef = {
     headerClass: 'header-class',
+    text: 'leftAligned',
+    flex: 1,
   };
 
   return (
@@ -44,7 +43,7 @@ export default function NbosPipelineOppGrid({
       className="ag-theme-material"
       style={{
         height: 500,
-        minwidth: 800,
+        minwidth: '100%',
         marginTop: 20,
       }}
     >

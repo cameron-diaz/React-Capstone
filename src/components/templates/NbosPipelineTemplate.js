@@ -31,13 +31,13 @@ export default function NbosPipelineTemplate({
             top5={newArrayTop5}
             show5={show5}
           />
+          <button
+            onClick={onClick}
+            className="tw-mb-4 tw-text-[#0166cc] tw-text-md tw-font-bold"
+          >
+            {show5 ? 'View Full Pipeline' : 'View Top 5'}
+          </button>
         </div>
-        <button
-          onClick={onClick}
-          className="tw-mb-20 tw-mt-6 tw-text-[#0166cc] tw-text-lg"
-        >
-          {show5 ? 'View Full Pipeline' : 'View Top 5'}
-        </button>
       </NbosPipelineSurfaceCard>
     </div>
   );

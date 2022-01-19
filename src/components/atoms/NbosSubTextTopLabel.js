@@ -7,7 +7,7 @@ export default function NbosSubTextTopLabel({ ...props }) {
       <p className="tw-text-gray-500 tw-text-sm tw-pb-1">
         {props.subTextLabel}
       </p>
-      <p className="tw-text-base"> {props.bottomLabel} </p>
+      <p className="tw-text-base tw-font-bold"> {props.bottomLabel} </p>
     </div>
   );
 }
