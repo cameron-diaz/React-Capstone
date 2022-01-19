@@ -3,7 +3,7 @@ import NbosMetricsSurfaceCard from '../atoms/NbosMetricsSurfaceCard';
 import NbosMetricTitleText from '../atoms/NbosMetricTitleText';
 // import NbosMetricSwitchToggle from '../atoms/NbosMetricSwitchToggle';
 // import NbosOutcomeMetricsChart from '../atoms/NbosOutcomeMetricsChart';
-import { NbosMetricsChart } from './NbosMetricsChart';
+import { NbosMetricsChart } from '../molecules/NbosMetricsChart';
 import NbosMetricToggle2 from '../atoms/NbosMetricToggle2';
 // import NbosBehaviorMetricsChart from '../atoms/NbosBehaviorMetricsChart';
 

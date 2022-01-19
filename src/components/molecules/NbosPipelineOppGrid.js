@@ -30,6 +30,7 @@ export default function NbosPipelineOppGrid({
     justifyContent: 'center',
     display: 'flex',
     alignItems: 'center',
+    textDecoration: 'underline',
   };
 
   const defaultColDef = {
@@ -42,18 +43,18 @@ export default function NbosPipelineOppGrid({
     <div
       className="ag-theme-material"
       style={{
-        height: 500,
-        minwidth: '100%',
-        marginTop: 20,
+        height: 400,
+        width: '100%',
       }}
     >
       <AgGridReact
         pagination={true}
-        paginationAutoPageSize={true}
-        rowHeight={70}
+        paginationPageSize={10}
+        // paginationAutoPageSize={true}
+        rowHeight={72}
         defaultColDef={defaultColDef}
         rowData={show5 ? top5 : opportunityDetail.opportunities}
-        style={{ width: '100%', height: '100%;' }}
+        // style={{ width: '100%', height: 500 }}
       >
         <AgGridColumn
           field="client_name"

@@ -4,7 +4,7 @@ import services from './services';
 export const fetchUserInfo = createAsyncThunk('user/setUserInfo', async () => {
   const response = await services.getUsers();
   // console.log(response.data);
-  return response.data[0];
+  return response.data[2];
 });
 
 export const userSlice = createSlice({

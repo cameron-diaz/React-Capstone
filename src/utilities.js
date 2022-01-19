@@ -20,10 +20,6 @@ export const threeDecimals = a => {
   return number.toFixed(3);
 };
 
-// format currency (calls 2decimals) - 100-1000
-// conditional (>)
-// format % (calls 2 decimals) convert to string before return '%'
-
 export const formattingCurrency = value => {
   if (value > 1000 && value < 1000000) {
     const dividedValue = value / 1000;
@@ -41,7 +37,6 @@ export const fortmattingPercents = value => {
 };
 
 export const formattingGridValues = value => {
-  //   const numberValue = parseFloat(value);
   if (value > 1000 && value < 1000000) {
     const dividedValue = value / 1000;
     return `$${twoDecimals(dividedValue)} K`;

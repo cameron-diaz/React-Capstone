@@ -8,7 +8,6 @@ export default function NbosMetricsToggle2({ changeHandler }) {
       label: 'Outcome Metrics',
       value: 'outcome',
       selectedBackgroundColor: '#0166CC',
-      // innerHeight: 50,
       selectedFontColor: '#ffffff',
     },
     {
@@ -20,7 +19,6 @@ export default function NbosMetricsToggle2({ changeHandler }) {
   ];
 
   const handleToggleSwitch = newValue => {
-    console.log(newValue);
     changeHandler(newValue);
   };
 
@@ -41,13 +39,6 @@ export default function NbosMetricsToggle2({ changeHandler }) {
         optionBorderRadius={5}
         border="solid rgba(1,102,204,100)"
       />
-      {/* <Switch
-        checkedChildren="Outcome Metrics"
-        unCheckedChildren="Behavior Metrics"
-        onChange={handleToggleSwitch}
-        options={options}
-        initialSelectedIndex={initialSelectedIndex}
-      /> */}
     </div>
   );
 }

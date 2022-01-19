@@ -19,6 +19,15 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
         dataLabels: {
           enabled: true,
           formatter: function () {
+            if (
+              this.key === 'Client Calls' ||
+              this.key === 'Prospect Calls' ||
+              this.key === 'Strategies Updated' ||
+              this.key === 'New Clients' ||
+              this.key === 'Avg Overall RM Satisfaction'
+            ) {
+              return this.y;
+            }
             const hundredThousand = this.y * 1000;
             if (this.y < 100) {
               return this.y + '';
@@ -116,6 +125,7 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
               ]
             : [
                 parseFloat(formattingChartValues(chartData.avgOverallRMSatY1)),
+                // not currency ^
                 parseFloat(chartData.clientCallsY1),
                 {
                   y: parseFloat(chartData.prospectCallsY1),

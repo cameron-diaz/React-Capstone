@@ -36,7 +36,6 @@ export function HomePage() {
     } else if (value === 'outcome' && outcomeMetrics.length === 0) {
       await dispatch(fetchOutcomeMetrics());
     }
-    console.log(value);
   };
 
   useEffect(async () => {
@@ -55,7 +54,7 @@ export function HomePage() {
       <section className="tw-h-auto tw-mx-8 tw-pt-16">
         <SideNavBar />
         <TopNavBar />
-        <div className="tw-flex tw-justify-between tw-mb-7 tw-mx-6 tw-gap-x-4">
+        <div className="tw-flex tw-justify-between tw-mb-6 tw-mx-6 tw-w-[1150px]">
           <NbosUserInfoTemplate userInfo={userInfo} />
           <NbosClientInfoTemplate
             clientInfo={clientInfo}
@@ -63,7 +62,7 @@ export function HomePage() {
             summary2={summary2}
           />
         </div>
-        <div>
+        <div className="tw-w-[1198px]">
           <NbosMetricsTemplate
             userInfo={userInfo}
             outcomeMetrics={outcomeMetrics}

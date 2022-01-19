@@ -1,4 +1,5 @@
 .header-class {
   color: black;
   justify-content: left !important;
+  border-top: 1px solid #c4c4c4;
 }

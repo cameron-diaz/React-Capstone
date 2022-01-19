@@ -40,17 +40,12 @@ const options = [
   },
 ];
 
-const onChange = newValue => {
-  console.log(newValue);
-};
-
 const initialSelectedIndex = options.findIndex(({ value }) => value === 'bar');
 
 export const NbosPipelineSwitchToggle = () => {
   return (
     <div className="tw-text-center tw-rounded-lg tw-p-2 tw-h-[3rem] tw-w-[80%] tw-items-center tw-my-6 tw-ml-[10%] tw-pt-2">
       <SwitchSelector
-        onChange={onChange}
         options={options}
         initialSelectedIndex={initialSelectedIndex}
         backgroundColor={'#ffffff'}

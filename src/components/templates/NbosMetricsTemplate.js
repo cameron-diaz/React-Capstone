@@ -1,5 +1,5 @@
 import React from 'react';
-import NbosMetricsCard from '../molecules/NbosMetricsCard';
+import NbosMetricsCard from '../organisms/NbosMetricsCard';
 
 export default function NbosMetricsTemplate({
   userInfo,

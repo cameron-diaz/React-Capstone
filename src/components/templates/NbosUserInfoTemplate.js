@@ -12,7 +12,7 @@ export default function NbosUserInfoTemplate({ userInfo }) {
       : '';
   return (
     <NbosSurfaceCard>
-      <div className="tw-grid tw-grid-rows-4 tw-items-center tw-w-[19rem] tw-mx-3 tw-py-8">
+      <div className="tw-grid tw-grid-rows-4 tw-items-center tw-w-[19rem] tw-mx-4 tw-py-6">
         <div className="">
           <Avatar
             size={85}
