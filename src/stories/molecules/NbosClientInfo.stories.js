@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NbosClientInfo } from '../../components/molecules/NbosClientInfo';
+import NbosClientInfo from '../../components/molecules/NbosClientInfo';
 
 export default {
   title: 'Molecules/NbosClientInfo',

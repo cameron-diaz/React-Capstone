@@ -97,7 +97,12 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
                 parseFloat(formattingChartValues(chartData.loanProdY2)),
                 parseFloat(formattingChartValues(chartData.DepGrowthY2)),
                 parseFloat(formattingChartValues(chartData.tmGrowthY2)),
-                parseFloat(chartData.newClientsY2),
+                {
+                  y: parseFloat(chartData.newClientsY2),
+                  color: `${
+                    chartData.newClientsY2 > 2 ? '#c4c4c4' : '##FF0000'
+                  }`,
+                },
               ]
             : [
                 parseFloat(formattingChartValues(chartData.avgOverallRMSatY2)),
@@ -121,11 +126,15 @@ export const NbosMetricsChart = ({ chartData, chartType }) => {
                 parseFloat(formattingChartValues(chartData.loanProdY1)),
                 parseFloat(formattingChartValues(chartData.DepGrowthY1)),
                 parseFloat(formattingChartValues(chartData.tmGrowthY1)),
-                parseFloat(chartData.newClientsY1),
+                {
+                  y: parseFloat(chartData.newClientsY1),
+                  color: `${
+                    chartData.newClientsY1 > 2 ? '#0166cc' : '##FF0000'
+                  }`,
+                },
               ]
             : [
                 parseFloat(formattingChartValues(chartData.avgOverallRMSatY1)),
-                // not currency ^
                 parseFloat(chartData.clientCallsY1),
                 {
                   y: parseFloat(chartData.prospectCallsY1),

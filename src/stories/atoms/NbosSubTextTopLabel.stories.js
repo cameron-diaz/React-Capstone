@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { NbosSubTextTopLabel } from '../../components/atoms/NbosSubTextTopLabel';
+import NbosSubTextTopLabel from '../../components/atoms/NbosSubTextTopLabel';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Atoms/NbosButton',
+  title: 'Atoms/NbosSubTextTopLabel',
   component: NbosSubTextTopLabel,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},

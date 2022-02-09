@@ -50,7 +50,6 @@ export default function NbosPipelineOppGrid({
       <AgGridReact
         pagination={true}
         paginationPageSize={10}
-        // paginationAutoPageSize={true}
         rowHeight={72}
         defaultColDef={defaultColDef}
         rowData={show5 ? top5 : opportunityDetail.opportunities}

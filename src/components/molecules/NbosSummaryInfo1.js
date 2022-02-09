@@ -6,6 +6,7 @@ import { formattingCurrency } from '../../utilities';
 import NbosSurfaceCard from '../atoms/NbosSurfaceCard';
 
 export default function NbosSummaryInfo1({ summary1 }) {
+  console.log(summary1);
   return (
     <NbosSurfaceCard>
       <div className="tw-grid tw-grid-cols-3 tw-min-h-[100px] tw-items-center">

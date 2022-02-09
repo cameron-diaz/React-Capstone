@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { NbosSummaryInfo2 } from '../../components/molecules/NbosSummaryInfo2';
+import NbosSummaryInfo2 from '../../components/molecules/NbosSummaryInfo2';
 
 export default {
-  title: 'Molecules/NbosSummaryInfo2',
   component: NbosSummaryInfo2,
+  title: 'Molecules/NbosSummaryInfo2',
 };
 
 const Template = args => <NbosSummaryInfo2 {...args} />;

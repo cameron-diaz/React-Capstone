@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { NbosRelationshipLabel } from '../../components/atoms/NbosRelationshipLabel';
+import NbosRelationshipLabel from '../../components/atoms/NbosRelationshipLabel';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Atoms/NbosButton',
+  title: 'Atoms/NbosRelationshipLabel',
   component: NbosRelationshipLabel,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},

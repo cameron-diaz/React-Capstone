@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NbosSummaryInfo1 } from '../../components/molecules/NbosSummaryInfo1';
+import NbosSummaryInfo1 from '../../components/molecules/NbosSummaryInfo1';
 
 export default {
   title: 'Molecules/NbosSummaryInfo1',

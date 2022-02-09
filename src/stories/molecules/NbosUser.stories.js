@@ -1,5 +1,5 @@
 import React from 'react';
-import { NbosUser } from '../../components/molecules/NbosUser';
+import NbosUser from '../../components/molecules/NbosUser';
 import { users } from '../data/testData-users';
 
 export default {
