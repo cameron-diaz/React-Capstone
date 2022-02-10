@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NbosHeader from '../../components/molecules/NbosHeader';
+import { NbosHeader } from '../../components/molecules/NbosHeader';
 
 export default {
   title: 'Molecules/NbosHeader',

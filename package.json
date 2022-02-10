@@ -7,9 +7,9 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
+    "data-server": "json-server --watch public/db.json --port 3004",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "data-server": "json-server --watch public/db.json --port 3004"
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@craco/craco": "6.4.0",
@@ -34,17 +34,18 @@
     "react-router-dom": "6.0.2",
     "react-scripts": "4.0.3",
     "react-switch-selector": "^2.1.0",
+    "storybook": "^6.4.18",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "6.4.18",
-    "@storybook/addon-actions": "6.4.18",
-    "@storybook/addon-essentials": "6.4.18",
-    "@storybook/addon-links": "6.4.18",
-    "@storybook/addon-viewport": "6.4.18",
-    "@storybook/node-logger": "6.4.18",
-    "@storybook/preset-create-react-app": "3.2.0",
-    "@storybook/react": "6.4.18",
+    "@babel/core": "^7.17.2",
+    "@storybook/addon-actions": "^6.4.18",
+    "@storybook/addon-docs": "^6.3.12",
+    "@storybook/addon-essentials": "^6.4.18",
+    "@storybook/addon-links": "^6.4.18",
+    "@storybook/node-logger": "^6.4.18",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.4.18",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "prettier": "2.4.1"
@@ -59,6 +60,21 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "resolutions": {
+    "babel-loader": "8.1.0"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   }
 }
